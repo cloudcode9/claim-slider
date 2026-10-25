@@ -2,15 +2,16 @@
 <title>예상 보험금 슬라이더</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;height:100%}
-body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#37352f;background:#fff;padding:10px 14px;overflow:hidden}
-.top{display:flex;align-items:baseline;gap:10px}.total{font-size:22px;font-weight:700;letter-spacing:-.3px}.sub{color:#9b9a97;font-size:12px}
-input[type=range]{width:100%;margin:6px 0 2px;accent-color:#37352f;height:22px}
-.ends{display:flex;justify-content:space-between;font-size:11px;color:#9b9a97}.ends b{color:#37352f}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 14px;margin-top:8px}
-.cell .row{display:flex;justify-content:space-between;font-size:12px}.cell .row b{font-variant-numeric:tabular-nums}
-.bar{position:relative;height:5px;background:#f1f1ef;border-radius:3px;margin-top:3px}
-.rng{position:absolute;top:0;height:5px;background:#dcdbd8;border-radius:3px}.fill{position:absolute;top:0;left:0;height:5px;background:#37352f;border-radius:3px}
-.note{font-size:10px;color:#9b9a97;margin-top:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#37352f;background:#fff;
+ padding:clamp(8px,3.5vh,18px) 14px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(4px,2vh,12px)}
+.top{display:flex;align-items:baseline;gap:10px}.total{font-size:clamp(20px,11vh,40px);font-weight:700;letter-spacing:-.3px;line-height:1.1}.sub{color:#9b9a97;font-size:clamp(11px,5vh,15px)}
+input[type=range]{width:100%;margin:0;accent-color:#37352f;height:clamp(20px,9vh,32px)}
+.ends{display:flex;justify-content:space-between;font-size:clamp(10px,4.6vh,14px);color:#9b9a97}.ends b{color:#37352f}
+.grid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);align-content:space-evenly;gap:clamp(6px,3vh,16px) 16px}
+.cell .row{display:flex;justify-content:space-between;font-size:clamp(11px,5.4vh,17px)}.cell .row b{font-variant-numeric:tabular-nums}
+.bar{position:relative;height:clamp(5px,2.6vh,9px);background:#f1f1ef;border-radius:5px;margin-top:4px}
+.rng{position:absolute;top:0;height:100%;background:#dcdbd8;border-radius:5px}.fill{position:absolute;top:0;left:0;height:100%;background:#37352f;border-radius:5px}
+.note{font-size:clamp(9px,4vh,12px);color:#9b9a97;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 </style></head><body>
 <div class="top"><span class="total" id="total"></span><span class="sub" id="label"></span></div>
 <input type="range" id="s" min="0" max="100" value="0" step="1" aria-label="보수적 ↔ 낙관적">
